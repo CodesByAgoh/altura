@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const altura = require('@altura/sdk');
+
+const alturaSDK = new altura.AlturaSDK({
+  projectId: 'YOUR_PROJECT_ID',
+  apiKey: 'YOUR_API_KEY',
+});
+
+async function App(nftId, propertyName, propertyValue) {
+  try {
+    const nft = await alturaSDK.smartNFTs.get(nftId);
+    const update = {
+      properties: {
+        [propertyName]: propertyValue,
+      },
+    };
+    await alturaSDK.smartNFTs.update(nftId, update);
+    console.log(`Property ${propertyName} updated to ${propertyValue} for NFT ${nftId}`);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export default App;
+export default App
