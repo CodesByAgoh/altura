@@ -1,11 +1,6 @@
-/* import React from 'react'
+ import React from 'react'
 
- const altura = require('@altura/sdk');
-
-const alturaSDK = new altura.AlturaSDK({
-  projectId: 'YOUR_PROJECT_ID',
-  apiKey: 'YOUR_API_KEY',
-}); 
+ 
 
 const { Altura } = require("@altura/altura-js")
 
@@ -13,7 +8,6 @@ const API_KEY = 'VNJ2K4Q-VBJ4QX9-NNCWWXC-VQV1Q5E';
 
 const altura = new Altura(API_KEY);
 
-const updatedItem = await alturaItem.updateProperty(PROPERTY_NAME, PROPERTY_VALUE);
 
 async function evolve(pokemon, evolution) {
   let newName;
@@ -59,9 +53,9 @@ async function evolve(pokemon, evolution) {
   }
 }
 
- To make the NFT evolve, you simply call the evolve function with the ID
-of the NFT and the intiger that is corresponding with your desired evolution  
+ /* To make the NFT evolve, you simply call the evolve function with the ID
+of the NFT and the intiger that is corresponding with your desired evolution   */
 
 evolve('120', 2)
 
-export default evolve */
+export default evolve 
